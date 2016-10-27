@@ -1,17 +1,12 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 
-
-
-function renderMenuItem(model) {
+function renderMenuItem(item) {
   const li = $(`
-    <li>
-      ${model.get('item', 'price', 'description')}
+    <li class ="entreeitems">
+      ${item.get('item')}
+    </li>
     `);
-    // items.forEach((item) => {
-    //   ul.append(renderMenuItem())
-    // });
-
+return li;
 }
-
 export default renderMenuItem;

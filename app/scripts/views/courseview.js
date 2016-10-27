@@ -1,14 +1,22 @@
 import $ from 'jquery';
-import menuItem from './menuItem';
+import Backbone from 'backbone';
+import renderMenuItem from './menuitem';
 
-function renderCourseList(items) {
+function renderCourseList(entreeItems) {
   const ul = $(`
       <ul>
       </ul>
     `);
-    item.forEach((item) => {
+    entreeItems.forEach((item) => {
       ul.append(renderMenuItem(item));
     });
+
+  entreeItems.on('update', () => {
+    entreeItems.forEach((item) => {
+      ul.append(renderMenuItem(item));
+      console.log(entreeItems);
+    });
+});
     return ul;
 }
 
