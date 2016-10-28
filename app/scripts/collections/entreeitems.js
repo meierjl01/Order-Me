@@ -1,6 +1,5 @@
 import Backbone from 'backbone';
 import EntreeItem from '../models/entreeitem';
-import _ from 'underscore';
 
 
 export default Backbone.Collection.extend({
