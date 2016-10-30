@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import Backbone from 'backbone';
 
-function renderMenuItem(item, orderItems) {
-  const MenuDiv = $(`
+function renderMenuItem(item, orderItem) {
+  const menuDiv = $(`
     <div class ="name-price">
       ${item.get('item')}
       ${item.get('price')}
@@ -10,16 +10,19 @@ function renderMenuItem(item, orderItems) {
     </div>
     `);
 
-    MenuDiv.on('click', (e) =>{
+    menuDiv.on('click', (e) =>{
       // console.log('hi');
-      orderItems.create({
+      orderItem.addItem({
         name: item.get('item'),
         price: item.get('price'),
-        id: item.get('id')
       });
+
+      orderItem.addPrice(item.get('price'));
+      orderItem.calculateTax(item.get('price'));
+      orderItem.calculateTotal(item.get('price'));
 
 });
 
-return MenuDiv;
+return menuDiv;
 }
 export default renderMenuItem;
