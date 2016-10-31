@@ -19,26 +19,29 @@ let orderItems = new OrderItems();
 let orderItem = new OrderItem();
 let menuArea = $('.menu');
 let orderArea = $('.order');
+let placedOrderArea = $('.placed-order');
 
 
 const Router = Backbone.Router.extend({
     routes: {
         ''         : 'home',
-        // 'success'  : 'success',
+        'success'  : 'success',
     },
     home() {
+        placedOrderArea.hide();
         beerItems.fetch();
         entreeItems.fetch();
         gameItems.fetch();
         menuArea.append(renderCourseList(entreeItems, gameItems, beerItems, orderItem));
         // orderItems.fetch();
         orderArea.append(orderItemView(orderItem, orderItems));
+    },
+    success() {
+      menuArea.hide();
+      // $('.order').hide();
+      // // placeOrder.hide();
+      orderItemView(orderItem);
     }
-    // success() {
-    //   menuArea.empty();
-    //   orderArea.empty();
-    //   menuArea.append(renderOrder(orderItems));
-    // }
 });
 
 const router = new Router();

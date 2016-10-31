@@ -3,7 +3,8 @@ import $ from 'jquery';
 import renderOrder from './orderitem.js';
 
 function orderItemView(orderItem, orderItems) {
-    let orderDiv = $(`<div></div>`);
+    let orderDiv = $(`<div>
+      </div>`);
     $('.order').append(orderDiv);
     orderItem.get('order').forEach((item) => {
         orderDiv.append(renderOrder(item));
@@ -17,7 +18,7 @@ function orderItemView(orderItem, orderItems) {
         });
 
         orderDiv.find('button').on('click', (e) => {
-            console.log(orderItem);
+            // console.log(orderItem);
         });
 
         let taxDiv = $(`<div class="tax">
@@ -31,7 +32,7 @@ function orderItemView(orderItem, orderItems) {
           </div>
           `);
 
-        const placeOrder = $(`<button class="order">Place Order<button>`);
+        const placeOrder = $(`<button class="order-button">Place Order</button>`);
 
         orderDiv.append(taxDiv);
         orderDiv.append(totalDiv);
@@ -39,16 +40,13 @@ function orderItemView(orderItem, orderItems) {
 
         placeOrder.on('click', (e) => {
             e.preventDefault();
-            orderItems.create({
-                order: orderItem.get('order'),
-                tax: orderItem.get('tax'),
-                total: orderItem.get('total')
-            });
-            let itemsOrdered = orderItem.get('order').map(function(item, i, arr) {
-                return item.name;
-            });
-            alert('Thank you for your order of' + productsOrdered + '! Your total is' + orderItem.get('total'));
-            window.location.reload();
+            // orderItems.create({
+            //     order: orderItem.get('order'),
+            //     tax: orderItem.get('tax'),
+            //     total: orderItem.get('total')
+            // });
+
+            location.hash = 'success';
         });
 
     });

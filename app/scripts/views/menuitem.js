@@ -3,11 +3,13 @@ import Backbone from 'backbone';
 
 function renderMenuItem(item, orderItem) {
   const menuDiv = $(`
-    <div class ="name-price">
+    <div class ="name-div">
       ${item.get('item')}
-      ${item.get('price')}
-      <div class="description">${item.get('description')}</div>
     </div>
+    <div class="price-div">
+    ${item.get('price')}
+    </div>
+    <div class="description">${item.get('description')}</div>
     `);
 
     menuDiv.on('click', (e) =>{

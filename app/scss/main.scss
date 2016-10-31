@@ -1,0 +1,91 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+body {
+    color: #354057;
+    @include outer-container;
+    border-bottom: 2px solid #7B7B7B;
+
+    header {
+        @include outer-container;
+
+        .images {
+            margin-left: 0 auto;
+            martin-right: 0 auto;
+            padding: 1em;
+        }
+
+        h1 {
+            text-align: left;
+            border-bottom: 2px solid #7B7B7B;
+        }
+
+        img {
+            @include span-columns(4);
+            padding: 2em;
+            background-color: #BADAD7;
+        }
+    }
+
+    .menu {
+        @include span-columns(6);
+        margin: 2em;
+        padding: 1em;
+
+        h2 {
+            border-bottom: 2px solid #7B7B7B;
+        }
+
+        .name-div {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            float: left;
+            display: block;
+            width: 95%;
+        }
+
+        .price-div {
+            float: right;
+            width: 5%;
+        }
+
+        .description {
+            display: block;
+            margin-bottom: 1em;
+        }
+    }
+
+    .order {
+        @include span-columns(4);
+        margin: 2em;
+        padding: 3em;
+        border: 2px solid #7B7B7B;
+        height: 30em;
+        background-color: #F1E7DF;
+
+        h3 {
+            text-align: center;
+            padding: 2em;
+        }
+
+        .order-items {
+            // text-overflow: ellipsis;
+            // white-space: nowrap;
+            // overflow: hidden;
+        }
+
+        .total {
+            text-align: center;
+        }
+
+        .tax {
+            text-align: center;
+        }
+
+        .order-button {
+            height: 4em;
+            width: 100%;
+        }
+    }
+}

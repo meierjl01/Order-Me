@@ -13,19 +13,19 @@ function renderCourseList(entreeItems, gameItems, beerItems, orderItems) {
 
     const ListOfEntrees = $(`
       <div class="entrees">
-      <h2>Entrees</h2>
+      <h3>Entrees</h3>
       </div>
     `);
 
     const ListOfBeer = $(`
         <div class="beer">
-        <h2>Beer</h2>
+        <h3>Beer</h3>
         </div>
       `);
 
     const ListOfGames = $(`
           <div class="games">
-          <h2>Games</h2>
+          <h3>Games</h3>
           </div>
         `);
 
